@@ -28,6 +28,7 @@ function submit(e) {
     .catch((err) => {
       alert(err);
     });
+  localStorage.setItem(new Date(), prompt.value);
   prompt.value = "";
 }
 

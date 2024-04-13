@@ -17,14 +17,18 @@ const api = async (text, key) => {
 
 function submit(e) {
   e.preventDefault();
+  content.innerHTML = "Loading ngab";
+
   api(prompt.value, api_key)
     .then((value) => {
       content.innerHTML = value.data.reply;
+      console.log(value.data.reply);
     })
 
     .catch((err) => {
       alert(err);
     });
+  prompt.value = "";
 }
 
 form.addEventListener("submit", (ev) => submit(ev));
